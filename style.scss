@@ -127,6 +127,15 @@ a {
     text-align: center;
     margin-top: 96px;
 
+    h2 {
+        margin-bottom: 12px;
+    }
+
+    p {
+        padding-left: 150px;
+        padding-right: 150px;
+    }
+
     &__items {
         display: flex;
         flex-wrap: wrap;
@@ -169,6 +178,15 @@ a {
     text-align: center;
     padding-top: 96px;
     width: $contentWidth;
+
+    h2 {
+        margin-bottom: 12px;
+    }
+
+    p {
+        padding-left: 150px;
+        padding-right: 150px;
+    }
 
     &__items {
         margin-top: 52px;
@@ -241,4 +259,40 @@ a {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin-top: 96px;
+    margin-bottom: 134px;
+
+    &__socialMedia {
+        padding-right: 15px;
+        .logo {
+            margin-bottom: 18px;
+        }
+    }
+
+    &__icons {
+        margin-top: 31px;
+        display: flex;
+        gap: 54px;
+    }
+
+    &__pages {
+        padding-left: 100px;
+    }
+
+    &__menu {
+        ul {
+            list-style: none;
+            color: $textColor;
+            margin-top: 31px;
+            li {
+                margin-bottom: 31px;
+            }
+        }
+    }
+
+    &__contact {
+        padding-left: 100px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
 }
