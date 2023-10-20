@@ -3,14 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
+    <title>Blog Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <header class="header center">
@@ -37,61 +34,14 @@
         <a class="contentText" href="#">Blog</a>
       </div>
     </header>
-    <section class="title">
-        <div class="title__content">
-            <h1 class="heading">Articles & News</h1>
-            <p class="title__breadcrumbs">
-                <ul class="breadcrumbs contentText">
-                    <li>
-                        <a href="index.html">Home  /</a>
-                    </li>
-                    <li>
-                        <a href="blog.html">Blog</a>
-                    </li>
-                </ul>
-            </p>
+    <section class="banner"></section>
+    <section class="sortedByTagsArticle" id="app">
+        <div class="articleItem">
+            
         </div>
+        <div class="tags"></div>
     </section>
-    <section class="latestPost">
-        <h2>Latest Post</h2>
-        <div class="latestPost__content">
-            <img src="img/latestPost_img.jpg" alt="image">
-            <div class="latestPost__text">
-                <h3>Low Cost Latest Invented Interior Designing Ideas</h3>
-                <p>Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.</p>
-                <p>Lorem Ipsum is not simply random text. It has roots in a piece of classica.</p>
-                <div class="news__date">
-                    <p>26 December,2022</p>
-                    <div class="news__link">
-                        <a href="#">
-                            <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path
-                                d="M1.77144 14.9527L7.71429 8.267L1.77144 1.58128"
-                                stroke="#292F36"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                            </svg>
-                          </a>
-                    </div>
-                  </div>
-            </div>
-        </div>
-    </section>
-    <section class="blogNews" id="app">
-        <h2 class="heading">Articles & News</h2>
-        <div>
-            <ul>
-                <li v-for="(card) in cards" :key="card.id">
-                    <figure>
-                        <img :src="card.URL" alt="">
-                        <figcaption>{{card.title}}</figcaption>
-                    </figure>
-                </li>
-            </ul>
-        </div>
-    </section>
+    <section class="articleList"></section>
     <footer class="footer center">
       <div class="footer__socialMedia">
         <div class="logo">
@@ -160,30 +110,18 @@
       </div>
       <div class="footer__contact">
         <h2 class="heading">Contact</h2>
-        <p class="contentText">
-          55 East Birchwood Ave. Brooklyn, New York 11201
-        </p>
+        <p class="contentText">55 East Birchwood Ave. Brooklyn, New York 11201</p>
         <p class="contentText">contact@interno.com</p>
         <p class="contentText">(123) 456 - 7890</p>
       </div>
     </footer>
     <script src="https://unpkg.com/vue@next"></script>
+    <script src="sortByTag.js"></script>
     <script>
         const App = {
-            data() {
-                return {
-                    cards: [
-                        {id: 1, URL: "img/blog_item_1.jpg", title: "Let’s Get Solution For Building Construction Work"},
-                        {id: 2, URL: "img/blog_item_2.jpg", title: "Low Cost Latest Invented Interior Designing Ideas."},
-                        {id: 3, URL: "img/blog_item_3.jpg", title: "Best For Any Office & Business Interior Solution"},
-                        {id: 4, URL: "img/blog_item_4.jpg", title: "Let’s Get Solution For Building Construction Work"},
-                        {id: 5, URL: "img/blog_item_5.jpg", title: "Low Cost Latest Invented Interior Designing Ideas."},
-                        {id: 6, URL: "img/blog_item_6.jpg", title: "Best For Any Office & Business Interior Solution"},
-                    ], 
-                }
-            },
-            methods: {
-            },
+            components: {
+                sortByTag,
+            }
         }
 
         Vue.createApp(App).mount('#app');
