@@ -4,10 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog Details</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header class="header center">
@@ -36,23 +39,20 @@
     </header>
     <section class="banner"></section>
     <section class="sortedByTagsArticle center" id="app">
-        <!-- <div>
-          <div v-for="(article) in articleArr" :key="article.id">
-            <h1>{{article.title}}</h1>
-            <img :src="article.URL" alt="">
-            <div>{{article.date}}</div>
-            <p>{{article.content}}</p>
-          </div>
-          <div class="tags">
-            <h2 class="heading">Tags</h2>
-            <button @click="sort()">Kitchen</button>
-            <button @click="sort()">Bedroom</button>
-            <button @click="sort()">Building</button>
-            <button @click="sort()">Architecture</button>
-            <button @click="sort()">Kitchen Planning</button>
-          </div>
-        </div> -->
-        <sortByTag></sortByTag>
+      <div v-for="(article) in articleArr" :key="article.id">
+        <h1>{{article.title}}</h1>
+        <img :src="article.URL" alt="" />
+        <div>{{article.date}}</div>
+        <p>{{article.content}}</p>
+      </div>
+      <div class="tags">
+        <h2 class="heading">Tags</h2>
+        <button @click="sortingKitchen">Kitchen</button>
+        <button>Bedroom</button>
+        <button>Building</button>
+        <button>Architecture</button>
+        <button>Kitchen Planning</button>
+      </div>
     </section>
     <section class="articleList"></section>
     <footer class="footer center">
@@ -123,21 +123,50 @@
       </div>
       <div class="footer__contact">
         <h2 class="heading">Contact</h2>
-        <p class="contentText">55 East Birchwood Ave. Brooklyn, New York 11201</p>
+        <p class="contentText">
+          55 East Birchwood Ave. Brooklyn, New York 11201
+        </p>
         <p class="contentText">contact@interno.com</p>
         <p class="contentText">(123) 456 - 7890</p>
       </div>
     </footer>
     <script src="https://unpkg.com/vue@next"></script>
-    <script src="sortByTag.js"></script>
     <script>
-        const App = {
-            components: {
-                sortByTag,
-            }
-        }
+            const App = {
+              data() {
+                return {
+                  articleArr: [
+                    { id: 1, URL: "img/blog_item_1.jpg", title: "tomato", tag: "Kitchen" },
+                    { id: 2, URL: "img/blog_item_1.jpg", title: "lemon", tag: "Bedroom" },
+                    { id: 3, URL: "img/blog_item_1.jpg", title: "apple", tag: "Building" },
+                  ],
+                  sortedArticleArr: [],
+                };
+              },
 
-        Vue.createApp(App).mount('#app');
+              methods: {
+                sortingKitchen() {
+                  this.articleArr = this.articleArr.filter(el => el.tag === "Kitchen");
+                 }
+              },
+            }
+          
+            Vue.createApp(App).mount("#app");
     </script>
   </body>
 </html>
+ <!-- 
+  // sortingKitchen() {
+                //   this.articleArr = this.articleArr.filter(el => el.tag === "Kitchen");
+                // }, - раотает частично
+
+                // sortingKitchen() {
+                //   this.sortedArticleArr.push({id: this.articleArr.id, title: this.articleArr.title, tag: this.articleArr.filter(el => el.tag === "Kitchen")})
+                // }
+                // - не работает совсем
+
+                // sortingKitchen() {
+                //   if (this.articleArr.tag === "Kitchen") {
+                //     this.sortedArticleArr.push({id: this.articleArr.id, title: this.articleArr.title, tag: this.articleArr.tag});
+                // } - не работает
+  -->
