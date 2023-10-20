@@ -39,8 +39,8 @@
     </header>
     <section class="banner"></section>
     <section class="sortedByTagsArticle center" id="app">
-      <div v-for="(article) in articleArr" :key="article.id">
-        <h1>{{article.title}}</h1>
+      <div v-for="(article) in articleArr" :key="article.id" class="sortedByTagsArticle__item">
+        <h1 class="heading">{{article.title}}</h1>
         <img :src="article.URL" alt="" />
         <div>{{article.date}}</div>
         <p>{{article.content}}</p>
@@ -136,7 +136,7 @@
               data() {
                 return {
                   articleArr: [
-                    { id: 1, URL: "img/blog_item_1.jpg", title: "tomato", tag: "Kitchen" },
+                    { id: 1, URL: "img/blogDetails_image.jpg", title: "Let’s Get Solution for Building Construction Work", tag: "Kitchen" },
                     { id: 2, URL: "img/blog_item_1.jpg", title: "lemon", tag: "Bedroom" },
                     { id: 3, URL: "img/blog_item_1.jpg", title: "apple", tag: "Building" },
                   ],

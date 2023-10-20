@@ -351,3 +351,27 @@ ul {
     background-size: cover;
     margin-bottom: 200px;
 }
+
+.sortedByTagsArticle {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    
+    &__item {
+        width: calc($contentWidth / 3 * 2);
+    }
+
+    h1 {
+        color: #292F36;
+        font-size: 50px;
+        line-height: 125%; /* 62.5px */
+        letter-spacing: 1px;
+    }
+
+    .tags {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        width: calc($contentWidth / 3);
+    }
+}

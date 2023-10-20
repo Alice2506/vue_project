@@ -301,4 +301,25 @@ ul {
   background-repeat: no-repeat;
   background-size: cover;
   margin-bottom: 200px;
+}
+
+.sortedByTagsArticle {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.sortedByTagsArticle__item {
+  width: 53.3333333333vw;
+}
+.sortedByTagsArticle h1 {
+  color: #292F36;
+  font-size: 50px;
+  line-height: 125%; /* 62.5px */
+  letter-spacing: 1px;
+}
+.sortedByTagsArticle .tags {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 26.6666666667vw;
 }/*# sourceMappingURL=style.css.map */
