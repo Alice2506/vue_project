@@ -15,5 +15,10 @@ const sortByTag = {
         }
     },
 
-    template: ``,
+    template: `
+        <div v-for="(article) in articleArr" :key="article.id" class="articleItem">
+        <h1>{{article.title}}</h1>
+        <img :src="article.URL" alt="">
+        </div>
+    `,
 }

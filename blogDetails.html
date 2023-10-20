@@ -36,9 +36,11 @@
     </header>
     <section class="banner"></section>
     <section class="sortedByTagsArticle center" id="app">
-        <div class="articleItem">
-
-        </div>
+        <!-- <div v-for="(article) in articleArr" :key="article.id" class="articleItem">
+            <h1>{{article.title}}</h1>
+            <img :src="article.URL" alt="">
+        </div> -->
+        <sortByTag></sortByTag>
         <div class="tags">
             <h2 class="heading">Tags</h2>
             <button @click="sort()">Kitchen</button>
