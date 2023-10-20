@@ -16,9 +16,21 @@ const sortByTag = {
     },
 
     template: `
-        <div v-for="(article) in articleArr" :key="article.id" class="articleItem">
-        <h1>{{article.title}}</h1>
-        <img :src="article.URL" alt="">
-        </div>
+    <div>
+    <div v-for="(article) in articleArr" :key="article.id">
+      <h1>{{article.title}}</h1>
+      <img :src="article.URL" alt="">
+      <div>{{article.date}}</div>
+      <p>{{article.content}}</p>
+    </div>
+    <div class="tags">
+      <h2 class="heading">Tags</h2>
+      <button @click="sort()">Kitchen</button>
+      <button @click="sort()">Bedroom</button>
+      <button @click="sort()">Building</button>
+      <button @click="sort()">Architecture</button>
+      <button @click="sort()">Kitchen Planning</button>
+    </div>
+    </div>
     `,
 }
