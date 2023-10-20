@@ -48,7 +48,7 @@
       <div class="tags">
         <h2 class="heading">Tags</h2>
         <button @click="sortingKitchen">Kitchen</button>
-        <button>Bedroom</button>
+        <button @click="sortingBedroom">Bedroom</button>
         <button>Building</button>
         <button>Architecture</button>
         <button>Kitchen Planning</button>
@@ -136,7 +136,7 @@
               data() {
                 return {
                   articleArr: [
-                    { id: 1, URL: "img/blogDetails_image.jpg", title: "Let’s Get Solution for Building Construction Work", tag: "Kitchen" },
+                    { id: 1, URL: "img/blogDetails_image.jpg", title: "Let’s Get Solution for Building Construction Work", date: "26 December,2022", tag: "Kitchen" },
                     { id: 2, URL: "img/blog_item_1.jpg", title: "lemon", tag: "Bedroom" },
                     { id: 3, URL: "img/blog_item_1.jpg", title: "apple", tag: "Building" },
                   ],
@@ -147,7 +147,11 @@
               methods: {
                 sortingKitchen() {
                   this.articleArr = this.articleArr.filter(el => el.tag === "Kitchen");
-                 }
+                 },
+                
+                sortingBedroom() {
+                  this.articleArr = this.articleArr.filter(el => el.tag === "Bedroom");
+                } 
               },
             }
           
