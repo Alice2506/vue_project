@@ -10,7 +10,7 @@ const sortByTag = {
     },
 
     methods: {
-        sort(tag) {
+        sort() {
 
         }
     },

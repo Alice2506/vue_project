@@ -35,11 +35,18 @@
       </div>
     </header>
     <section class="banner"></section>
-    <section class="sortedByTagsArticle" id="app">
+    <section class="sortedByTagsArticle center" id="app">
         <div class="articleItem">
-            
+
         </div>
-        <div class="tags"></div>
+        <div class="tags">
+            <h2 class="heading">Tags</h2>
+            <button @click="sort()">Kitchen</button>
+            <button @click="sort()">Bedroom</button>
+            <button @click="sort()">Building</button>
+            <button @click="sort()">Architecture</button>
+            <button @click="sort()">Kitchen Planning</button>
+        </div>
     </section>
     <section class="articleList"></section>
     <footer class="footer center">
